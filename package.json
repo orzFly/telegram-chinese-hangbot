@@ -1,0 +1,16 @@
+{
+  "name": "telegram-gauss-bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "coffee-script": "^1.9.3",
+    "lodash": "^3.10.1",
+    "telegram-bot": "^0.3.0"
+  }
+}
