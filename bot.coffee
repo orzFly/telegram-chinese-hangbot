@@ -4,7 +4,10 @@ Telegram = require 'telegram-bot'
 Redis = require 'ioredis'
 Promise = require 'bluebird'
 
-redis = new Redis keyPrefix: "ChineseHangBot:"
+redis = new Redis
+  port: parseInt(process.env.REDIS_PORT, 10) || 6379
+  host: process.env.REDIS_HOST || '127.0.0.1'
+  keyPrefix: "ChineseHangBot:"
 tg = new Telegram(process.env.TELEGRAM_BOT_TOKEN)
 
 dict = do ->
@@ -106,7 +109,7 @@ tg.on 'message', (msg) ->
       reply_to_message_id: @message_id
       chat_id: @chat.id
 
-  cmd = String(text.match(/^\/([a-zA-Z0-9]*)(@coxxsbot)?/i)?[1]).toLowerCase()
+  cmd = String(text.match(/^\/([a-zA-Z0-9]*)(@ChineseHangBot)?/i)?[1]).toLowerCase()
   return map[cmd](msg) if cmd && map[cmd]
 
   readSession(msg).then (x) ->
