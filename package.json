@@ -1,5 +1,5 @@
 {
-  "name": "telegram-gauss-bot",
+  "name": "telegram-chinese-bot",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -9,7 +9,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "bluebird": "^3.0.5",
     "coffee-script": "^1.9.3",
+    "ioredis": "^1.10.0",
     "lodash": "^3.10.1",
     "telegram-bot": "^0.3.0"
   }
